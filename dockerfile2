@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:17.9.0-slim
 MAINTAINER "chaithanya"
 WORKDIR /app
 COPY . .
