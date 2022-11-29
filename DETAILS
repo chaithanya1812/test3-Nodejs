@@ -1,0 +1,20 @@
+------------------------------------------------------
+FROM node:latest
+WORKDIR /usr/src/app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD ["node","server.js"]
+
+docker build -t nodejs .
+
+docker run -d --name c1 -p 3001:3000 nodejs
+docker tag nodejs4 chaitu1812/project2
+
+----------------------------------------------------
+ROM node:latest
+MAINTAINER "chaithanya"
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 3000
