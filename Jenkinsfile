@@ -1,4 +1,7 @@
 // jobname=nodejs
+/* This job based on Build with parameters
+   you can select how many containers to start to acesses of this application
+ */  
 pipeline{
     agent {
         label 'NodejsJobs'
