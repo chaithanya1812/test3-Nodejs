@@ -47,7 +47,7 @@ pipeline{
             }
             stage('To delete containers'){
                 steps{
-                    sh 'docker stop $(docker ps -aq)'
+                    sh 'docker stop $(docker ps -q)'
                     sh 'docker rm -f $(docker ps -aq)'
                 }
             }
