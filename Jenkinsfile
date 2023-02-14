@@ -3,9 +3,9 @@
    you can select how many containers to start to acesses of this application
  */  
 pipeline{
-    agent {
-        label 'NodejsJobs'
-    }
+   // agent {
+     //   label 'NodejsJobs'
+   // }
     tools{
         nodejs 'NodeJS17.8.0'
     }
