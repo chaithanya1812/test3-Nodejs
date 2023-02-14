@@ -3,6 +3,7 @@
    you can select how many containers to start to acesses of this application
  */  
 pipeline{
+   agent any
    // agent {
      //   label 'NodejsJobs'
    // }
