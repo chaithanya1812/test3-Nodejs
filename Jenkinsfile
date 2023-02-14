@@ -42,7 +42,7 @@ pipeline{
                     sh 'docker rm -f $(docker ps -aq) || true'
                     sh 'docker rmi chaitu1812/test3-nodejs:latest || true'
                     // it's just untaged not deleted so i removed dangling images
-                    sh 'docker rmi $( docker images -q -f dangling=true)'
+                    //sh 'docker rmi $( docker images -q -f dangling=true)'
                    
                 }
             }
