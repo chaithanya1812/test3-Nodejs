@@ -30,7 +30,7 @@ pipeline{
             steps{
                 withCredentials([string(credentialsId: 'ddockerloginn', variable: 'login')]) {
                     sh 'docker login -u chaitu1812 --password $login'
-                }    
+                }     
                 sh 'docker build -t chaitu1812/test3-nodejs:latest .'    
                 sh 'docker push chaitu1812/test3-nodejs:latest'
                 sh 'docker rmi chaitu1812/test3-nodejs:latest'
@@ -40,6 +40,8 @@ pipeline{
                 steps{
                     sh 'docker stop $(docker ps -q) || true'
                     sh 'docker rm -f $(docker ps -aq) || true'
+                    sh 'docker rmi chaitu1812/test3-nodejs:latest || true'
+                   
                 }
             }
             
