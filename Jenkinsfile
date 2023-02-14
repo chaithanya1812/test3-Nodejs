@@ -26,16 +26,6 @@ pipeline{
                 git branch: 'FIRST', url: 'https://github.com/chaithanya1812/test3-Nodejs.git'
             }
         }
-        stage('BUILD'){
-            steps{
-                script{
-                nodejs(nodeJSInstallationName: 'NodeJS17.8.0'){
-                    sh 'npm install'
-                }
-                
-                }
-            }
-        }
         stage('Docker build & Docker login'){
             steps{
                 withCredentials([string(credentialsId: 'ddockerloginn', variable: 'login')]) {
@@ -48,8 +38,8 @@ pipeline{
             }
             stage('To delete containers'){
                 steps{
-                    sh 'docker stop $(docker ps -q)'
-                    sh 'docker rm -f $(docker ps -aq)'
+                    sh 'docker stop $(docker ps -q) || true'
+                    sh 'docker rm -f $(docker ps -aq) || true'
                 }
             }
             
